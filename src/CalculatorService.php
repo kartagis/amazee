@@ -1,22 +1,23 @@
 <?php
-
 namespace Drupal\amazee;
+
+use jlawrence\eos\Parser;
 
 class CalculatorService
 {
-protected $saySomething;
+protected $calculate;
 
   public function __construct()
   {
-    $this->saySomething = "Hello World";
+    $this->calculate = 15;
   }
 
-  public function sayHello($name)
+  public function solveExpression($expression)
   {
-    if (empty($name)) {
-      return $this->saySomething;
+    if (empty($variables)) {
+      return $this->calculate;
     } else {
-      return "Hello ".$name;
+      return Parse::solve($expression);
     }
   }
 }
