@@ -5,16 +5,20 @@ use jlawrence\eos\Parser;
 
 class CalculatorService
 {
-protected $calculate;
+  protected $calculate;
+  protected $eq = "";
+  protected $vars;
+  protected $infix;
 
   public function __construct()
   {
-    $this->calculate = 15;
+    $this->eq = "";
+    //$this->vars = $vars;
   }
 
-  public function solveExpression($expression)
+  public function solveExpression($expression = "")
   {
-    if (empty($variables)) {
+    if (empty($expression)) {
       return $this->calculate;
     } else {
       return Parse::solve($expression);

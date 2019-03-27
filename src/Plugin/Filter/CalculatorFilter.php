@@ -15,8 +15,11 @@ use jlawrence\eos\Parser;
  */
 class CalculatorFilter extends FilterBase
 {
-  protected $eq;
-  protected $vars;
+  private $eq = "";
+  private $vars;
+  protected $text;
+  protected $new_text;
+  protected $langcode;
 
   function process($text, $langcode)
   {
