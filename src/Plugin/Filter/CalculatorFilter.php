@@ -15,15 +15,10 @@ use jlawrence\eos\Parser;
  */
 class CalculatorFilter extends FilterBase
 {
-  private $eq = "";
-  private $vars;
-  protected $text;
-  protected $new_text;
-  protected $langcode;
-
+  protected $eq;
   function process($text, $langcode)
   {
-    $new_text = str_replace($text, Parser::solve($eq, $vars), $text);
+    $new_text = str_replace($text, Parser::solve($this->eq, 2), $text);
     return new FilterProcessResult($new_text);
   }
 }

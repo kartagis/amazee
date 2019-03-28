@@ -5,23 +5,23 @@ use jlawrence\eos\Parser;
 
 class CalculatorService
 {
-  protected $calculate;
-  protected $eq = "";
+  public $calculate;
+  public $eq = "";
   protected $vars;
-  protected $infix;
+  public static $infix;
 
   public function __construct()
   {
-    $this->eq = "";
-    //$this->vars = $vars;
+    $this->eq = $eq;
+    $this->calculate = '1+2';
   }
 
-  public function solveExpression($expression = "")
+  public function solveExpression($expression)
   {
     if (empty($expression)) {
       return $this->calculate;
     } else {
-      return Parse::solve($expression);
+      return Parser::solve($expression);
     }
   }
 }
