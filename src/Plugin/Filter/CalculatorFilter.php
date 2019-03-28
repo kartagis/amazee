@@ -18,7 +18,7 @@ class CalculatorFilter extends FilterBase
   protected $eq;
   function process($text, $langcode)
   {
-    $new_text = str_replace($text, Parser::solve($this->eq, 2), $text);
-    return new FilterProcessResult($new_text);
+    $text = preg_replace("/[A-Za-z]/", "",$text);
+    return new FilterProcessResult(Parser::solve(strip_tags($text)));
   }
 }
