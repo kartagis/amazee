@@ -6,9 +6,6 @@ use jlawrence\eos\Parser;
 class CalculatorService
 {
   public $calculate;
-  public $eq = "";
-  protected $vars;
-  public static $infix;
 
   public function __construct()
   {
