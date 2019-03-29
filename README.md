@@ -17,8 +17,8 @@ There are a few ways
 ```
 or simply type `composer require jlawrence/eos`
 
-- Insert the below block into your main `composer.json` just below the
-`repositories` block, so that your `composer.json` looks like this:
+- Insert the below block into your main `composer.json` just below the
+`repositories` block, so that your `composer.json` looks like this:
 
 ```
 "repositories": [
