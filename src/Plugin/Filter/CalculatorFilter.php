@@ -15,10 +15,17 @@ use jlawrence\eos\Parser;
  */
 class CalculatorFilter extends FilterBase
 {
-  protected $eq;
   function process($text, $langcode)
   {
-    $text = preg_replace("/[A-Za-z]/", "",$text);
-    return new FilterProcessResult(Parser::solve(strip_tags($text)));
+    $array = explode(" ", $text);
+    $txt = "";
+    foreach($array as $arr) {
+      if (preg_match("/[0-9\+\-\*\/]/",$arr)) {
+        $txt .= " ". Parser::solve(strip_tags($arr),1);
+      } else {
+        $txt .= " ".strip_tags($arr);
+      }
+    }
+    return new FilterProcessResult($txt);
   }
 }
