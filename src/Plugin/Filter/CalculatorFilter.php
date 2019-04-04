@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\amazee\Plugin\Filter;
+namespace Drupal\math_filter\Plugin\Filter;
 
 use \Drupal\filter\Plugin\FilterBase;
 use \Drupal\filter\FilterProcessResult;
@@ -7,16 +7,14 @@ use jlawrence\eos\Parser;
 
 /**
  * @Filter(
- *   id = "filter_amazee",
- *   title = @Translation("My custom text filter"),
- *   description = @Translation("Perform calculations"),
+ *   id = "filter_math",
+ *   title = @Translation("Math Filter"),
+ *   description = @Translation("Perform calculations and display on node"),
  *   type = Drupal\filter\Plugin\FilterInterface::TYPE_MARKUP_LANGUAGE,
  * )
  */
-class CalculatorFilter extends FilterBase
-{
-  function process($text, $langcode)
-  {
+class CalculatorFilter extends FilterBase {
+  function process($text, $langcode) {
     $array = explode(" ", $text);
     $txt = "";
     foreach($array as $arr) {

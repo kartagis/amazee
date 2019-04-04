@@ -1,20 +1,17 @@
 <?php
-namespace Drupal\amazee;
+namespace Drupal\math_filter;
 
 use jlawrence\eos\Parser;
 
-class CalculatorService
-{
+class CalculatorService {
   public $calculate;
 
-  public function __construct()
-  {
+  public function __construct() {
     $this->eq = $eq;
     $this->calculate = '1+2';
   }
 
-  public function solveExpression($expression)
-  {
+  public function solveExpression($expression) {
     if (empty($expression)) {
       return $this->calculate;
     } else {
