@@ -1,3 +1,0 @@
-services:
-  amazee.calculate:
-    class: Drupal\amazee\CalculatorService
