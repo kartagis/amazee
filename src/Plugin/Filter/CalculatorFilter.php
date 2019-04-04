@@ -18,10 +18,10 @@ class CalculatorFilter extends FilterBase {
     $array = explode(" ", $text);
     $txt = "";
     foreach($array as $arr) {
-      if (preg_match("/[0-9\+\-\*\/]/",$arr)) {
-        $txt .= " ". Parser::solve(strip_tags($arr),1);
+      if (preg_match("/[0-9\+\-\*\/]+$/",$arr)) {
+        $txt .= " ".Parser::solve($arr,1);
       } else {
-        $txt .= " ".strip_tags($arr);
+        $txt .= " ".$arr;
       }
     }
     return new FilterProcessResult($txt);
