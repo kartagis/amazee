@@ -6,6 +6,10 @@ use \Drupal\filter\FilterProcessResult;
 use jlawrence\eos\Parser;
 
 /**
+ * Processes the given equation and outputs it on the node.
+ */
+
+/**
  * @Filter(
  *   id = "filter_math",
  *   title = @Translation("Math Filter"),
@@ -13,7 +17,12 @@ use jlawrence\eos\Parser;
  *   type = Drupal\filter\Plugin\FilterInterface::TYPE_MARKUP_LANGUAGE,
  * )
  */
+
 class CalculatorFilter extends FilterBase {
+
+  /**
+   * {@inheritdoc}.
+   */
   function process($text, $langcode) {
     $array = explode(" ", $text);
     $txt = "";

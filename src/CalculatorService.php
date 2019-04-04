@@ -3,6 +3,9 @@ namespace Drupal\math_filter;
 
 use jlawrence\eos\Parser;
 
+/**
+ * Creates a math service.
+ */
 class CalculatorService {
   public $calculate;
 
